@@ -29,10 +29,10 @@ def cover(layer):
 
 
 def p01(layer):
-    L.caption(layer, (44, 52), ["我二十五岁，笔名「夜画」。"], size=44, pad=(30, 22))
-    L.caption(layer, (44, 190), ["画 NTR，四年没露过脸。"], size=44, pad=(30, 22))
-    L.caption(layer, (44, 328), ["读者认不出我，", "他们只认得这条线。"], size=40,
-              pad=(28, 20))
+    # 「我二十四岁，是……」致敬 B 站「24 岁，是学生」句式（池沼梗）
+    L.caption(layer, (44, 52), ["我二十四岁，", "是……画 NTR 的。"], size=44, pad=(30, 22))
+    L.caption(layer, (44, 262), ["笔名「夜画」，四年没露过脸。",
+                                 "读者认不出我，他们只认得这条线。"], size=38, pad=(30, 22))
     L.caption(layer, (930, 1640), ["今天要画完的，", "是女主被抢走那一页。"], size=38,
               pad=(28, 20), bold=False)
 
