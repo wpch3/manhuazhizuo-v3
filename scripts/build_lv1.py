@@ -26,8 +26,8 @@ def cover(layer):
     L.caption(layer, (60, 392), ["我画的女生，从来不看我"], size=36,
               pad=(28, 18), radius=4, bold=False)
     # 她看的是面前摊开的漫画（=他的画），在画框内 → 有尾，指向她
-    L.speech(layer, (1215, 320), ["你画的这个，", "我认得。"], size=40,
-             target=(930, 720), tail_len=110)
+    L.speech(layer, (1240, 268), ["你画的这个，", "我认得。"], size=40,
+             target=(955, 600), tail_len=135)
 
 
 def p01(layer):
@@ -74,11 +74,17 @@ def p06(layer):
     L.speech(layer, (1060, 215), ["老师，你画的那些", "「被抢走」的女孩子……"], size=33,
              target=(485, 500), tail_len=150)
     L.speech(layer, (1060, 400), ["好像都没有", "自己喜欢的东西。"], size=33, target=None)
-    L.caption(layer, (860, 700), ["那一瞬间，", "我竟然有点想反驳。"], size=32, pad=(26, 18),
+    L.caption(layer, (44, 1680), ["那一瞬间，我竟然有点想反驳。"], size=32, pad=(26, 18),
               bold=False)
 
 
 def p07(layer):
+    # 新P7：她的毕业作品全页——雨夜伞铺油画。他的旁白落在画面左下深色地板上
+    L.caption(layer, (64, 1650), ["她画的每个人，", "都在挑自己的伞。"], size=44,
+              pad=(32, 22), bold=False)
+
+
+def p08(layer):
     # rev.6 新原画：全页近景、她前倾，嘴闭不笑。左上角teal墙 + 左臂上叠放气泡，尾尖指向脸
     L.speech(layer, (255, 300), ["你笔下的女生，好像", "只有「被爱」和", "「被抢走」两种状态。"],
              size=33, target=(610, 780), tail_len=96)
@@ -89,7 +95,7 @@ def p07(layer):
     L.caption(layer, (1120, 1010), ["她说得很轻，", "像在替谁道歉。"], size=30, pad=(24, 16), bold=False)
 
 
-def p08(layer):
+def p09(layer):
     # rev.6 新构图：窗外她与围巾男生并肩，收敛的笑（眼弯、头微侧），全话唯一松弛的笑
     L.caption(layer, (62, 68), ["那天下午，我在窗边坐到天黑。"], size=36, pad=(28, 20))
     # 她隔着玻璃说话，属于"画外音"，不画尾巴（v1 铁律：说话者不在同一空间不画尾）
@@ -98,15 +104,15 @@ def p08(layer):
               pad=(32, 22))
 
 
-def p09(layer):
-    """第 9 页：他的解释（新画布）。旁白放顶部暗墙留白，不压手与数位板。"""
+def p10(layer):
+    """第 10 页：他的解释。旁白放顶部暗墙留白，不压手与数位板。"""
     L.caption(layer, (150, 66), ["我又新建了一个空白文件。"], size=40, pad=(30, 22))
     L.caption(layer, (150, 158), ["那部连载，后来没画完。"], size=34, pad=(26, 18), bold=False)
     L.caption(layer, (150, 228), ["不是因为没时间。"], size=34, pad=(26, 18), bold=False)
     L.caption(layer, (150, 298), ["是因为画不下去。"], size=34, pad=(26, 18), bold=False)
 
 
-def p10(layer):
+def p11(layer):
     # rev.6 新原画：右上空墙叠三块（四十年后/他还在画/爷爷画外音），无尾
     L.caption(layer, (852, 74), ["四十年后。"], size=46, pad=(32, 24))
     L.caption(layer, (852, 204), ["我还在画。", "不过现在，我画的是纯爱。"], size=34,
@@ -122,10 +128,11 @@ PAGES = [
     ("page-04-lookup", "p04", p04, 4, None),
     ("page-05-standing", "p05", p05, 5, None),
     ("page-06-notebook", "p06", p06, 6, None),
-    ("page-07-touch", "p07", p07, 7, None),
-    ("page-08-girl-noon", "p08", p08, 8, None),
-    ("page-09-newpage", "p09", p09, 9, None),
-    ("page-10-old-man", "p10", p10, 10, None),
+    ("page-07-fineart", "p07", p07, 7, None),
+    ("page-08-touch", "p08", p08, 8, None),
+    ("page-09-girl-noon", "p09", p09, 9, None),
+    ("page-10-newpage", "p10", p10, 10, None),
+    ("page-11-old-man", "p11", p11, 11, None),
 ]
 
 

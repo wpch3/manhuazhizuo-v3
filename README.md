@@ -38,7 +38,7 @@ pip install --break-system-packages Pillow numpy
 python3 scripts/build_lv1.py
 ```
 
-输出：`deliverables/lv1/*.webp` 与 `deliverables/LV1_第1话_试读.pdf`（11 页）
+输出：`deliverables/lv1/*.webp` 与 `deliverables/LV1_第1话_试读.pdf`（12 页）
 
 ## 字体与许可
 
