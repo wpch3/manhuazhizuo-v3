@@ -1,0 +1,155 @@
+"""LV1《被拒绝的 NTR 老师》第 1 话排版构建。
+
+用法：python3 scripts/build_lv1.py
+输出：deliverables/lv1/*.png + deliverables/LV1_第1话_试读.pdf
+"""
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from PIL import Image, ImageDraw, ImageFilter  # noqa: E402
+
+import comic_layout as L  # noqa: E402
+
+ART = ROOT / "art/lv1"
+OUT = ROOT / "deliverables/lv1"
+OUT.mkdir(parents=True, exist_ok=True)
+
+
+def cover(layer):
+    L.caption(layer, (64, 78), ["被拒绝的", "NTR 老师"], size=92, pad=(40, 30), radius=6)
+    L.caption(layer, (64, 404), ["第 1 话｜她拒绝的理由，", "比你画的还精彩"], size=36,
+              pad=(28, 18), radius=4, bold=False)
+    L.speech(layer, (1150, 300), ["你就是那个……", "专门画女孩子", "被抢走的老师吧？"],
+             size=40, target=None)
+
+
+def p01(layer):
+    L.caption(layer, (44, 52), ["我二十五岁，画 NTR 漫画。"], size=44, pad=(30, 22))
+    L.caption(layer, (44, 190), ["读者越生气，我涨粉越快。"], size=44, pad=(30, 22))
+    L.caption(layer, (930, 1640), ["今天要画完的，", "是女主被抢走那一页。"], size=38,
+              pad=(28, 20), bold=False)
+
+
+def p02(layer):
+    L.caption(layer, (44, 56), ["我赚钱的公式，只有一句话："], size=44, pad=(30, 22))
+    L.caption(layer, (140, 1676), ["「原本属于我的人，被抢走了。」",
+                                   "越痛，越好看。",
+                                   "这是我唯一会画的东西。"], size=34, pad=(30, 22))
+
+
+def p03(layer):
+    L.caption(layer, (46, 60), ["然后，我在咖啡店看见了她。"], size=44, pad=(30, 22))
+    L.caption(layer, (46, 1742), ["我站了一会儿，才敢走过去。"], size=34, pad=(26, 18),
+              bold=False)
+
+
+def p04(layer):
+    L.speech(layer, (368, 372), ["啊……你是那个", "画漫画的老师？"], size=44,
+             target=(690, 520))
+    L.speech(layer, (330, 872), ["我有关注你哦。"], size=44, target=(742, 704))
+    L.caption(layer, (60, 1740), ["手心出汗了。"], size=34, pad=(26, 18), bold=False)
+
+
+def p05(layer):
+    L.caption(layer, (56, 66), ["她说这句话的时候，"], size=40, pad=(28, 20))
+    L.caption(layer, (56, 190), ["笑得很温柔。"], size=40, pad=(28, 20))
+    L.speech(layer, (330, 690), ["那我说实话", "可以吗？"], size=46, target=(640, 900))
+    L.caption(layer, (900, 1690), ["我点头点得太快了。"], size=32, pad=(24, 16), bold=False)
+
+
+def p06(layer):
+    L.speech(layer, (356, 286), ["老师，你画的那些", "「被抢走」的女孩子……"], size=40,
+             target=(720, 660), tail_len=62)
+    L.speech(layer, (1146, 262), ["好像都没有", "自己喜欢的东西。"], size=40,
+             target=(878, 600), tail_len=62)
+    L.caption(layer, (70, 1630), ["那一瞬间，我竟然有点想反驳。"], size=34, pad=(26, 18),
+              bold=False)
+
+
+def p07(layer):
+    L.speech(layer, (372, 300), ["你笔下的女生，好像只有", "「被爱」和「被抢走」", "两种状态。"],
+             size=40, target=(748, 470), tail_len=54)
+    L.speech(layer, (360, 700), ["可是我们其实会——"], size=42, target=(660, 520), tail_len=50)
+    L.speech(layer, (356, 930), ["挑自己喜欢的伞。", "记得朋友不吃香菜。",
+                                 "下雨天，也会突然想吃甜的。"], size=34,
+             target=(700, 812), tail_len=46)
+    L.caption(layer, (96, 1704), ["她说得很轻，像在替谁道歉。"], size=32, pad=(26, 18), bold=False)
+
+
+def p08(layer):
+    L.caption(layer, (48, 26), ["那天下午，我在窗边坐到天黑。"], size=40, pad=(28, 20))
+    L.speech(layer, (1052, 352), ["明天也一起吧？"], size=34, target=(908, 470), tail_len=46)
+    L.caption(layer, (760, 1560), ["她不是谁的「女朋友」。", "她只是她自己。"], size=44,
+              pad=(32, 24))
+
+
+def p09(layer):
+    """第 9 页：他的解释（新画布）。旁白放顶部暗墙留白，不压手与数位板。"""
+    L.caption(layer, (150, 66), ["我又新建了一个空白文件。"], size=40, pad=(30, 22))
+    L.caption(layer, (150, 158), ["那部连载，后来没画完。"], size=34, pad=(26, 18), bold=False)
+    L.caption(layer, (150, 228), ["不是因为没时间。"], size=34, pad=(26, 18), bold=False)
+    L.caption(layer, (150, 298), ["是因为画不下去。"], size=34, pad=(26, 18), bold=False)
+
+
+def p10(layer):
+    """第 10 页：四十年后。旁白在盒子上方的空墙，孙辈的话放进右下空白格。"""
+    L.caption(layer, (556, 86), ["四十年后。"], size=50, pad=(32, 24))
+    L.caption(layer, (556, 202), ["他还在画。"], size=36, pad=(26, 18))
+    L.caption(layer, (556, 278), ["不过现在，他画的是纯爱。"], size=36, pad=(26, 18))
+    L.speech(layer, (1006, 1698), ["爷爷，", "这一段真好看。"], size=36, target=None)
+
+
+PAGES = [
+    ("page-00-cover", "cover", cover, 0, None),
+    ("page-01-desk", "p01", p01, 1, None),
+    ("page-02-manuscript", "p02", p02, 2, None),
+    ("page-03-cafe", "p03", p03, 3, None),
+    ("page-04-lookup", "p04", p04, 4, None),
+    ("page-05-standing", "p05", p05, 5, None),
+    ("page-06-notebook", "p06", p06, 6,
+     [(150, 120, 260, 250), (1256, 130, 270, 270)], None),
+    ("page-07-touch", "p07", p07, 7, None),
+    ("page-08-girl-noon", "p08", p08, 8, None),
+    ("page-09-newpage", "p09", p09, 9, None),
+    ("page-10-old-man", "p10", p10, 10, None),
+]
+
+
+def main():
+    made = []
+    for name, tag, fn, seed, soften, *rest in PAGES:
+        art = ART / f"{name}.png"
+        if not art.exists():
+            art = ART / f"{name}.webp"
+        if not art.exists():
+            print(f"[skip] {name} 缺原画")
+            continue
+        out = OUT / f"{tag}.webp"
+        L.compose(art, fn, seed=seed, out=out, erase=soften,
+                  fade=(rest[0] if rest else None))
+        made.append(out)
+        print(f"[ok] {out.relative_to(ROOT)}")
+    if made:
+        pdf = ROOT / "deliverables/LV1_第1话_试读.pdf"
+        tmp = []
+        for i, p in enumerate(made):
+            j = ROOT / "art/lv1/master/_pdf" / f"{i:02d}.jpg"
+            j.parent.mkdir(parents=True, exist_ok=True)
+            Image.open(p).convert("RGB").save(j, "JPEG", quality=95, subsampling=0,
+                                             optimize=True)
+            tmp.append(j)
+        imgs = [Image.open(p).convert("RGB") for p in tmp]
+        imgs[0].save(pdf, save_all=True, append_images=imgs[1:], resolution=150.0)
+        print(f"[ok] {pdf.relative_to(ROOT)}  {len(imgs)} 页 "
+              f"{pdf.stat().st_size/1e6:.1f} MB")
+        for p in tmp:
+            p.unlink(missing_ok=True)
+
+
+if __name__ == "__main__":
+    main()
