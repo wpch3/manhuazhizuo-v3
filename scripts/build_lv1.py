@@ -1,4 +1,4 @@
-"""LV1《被拒绝的 NTR 老师》第 1 话排版构建。
+"""LV1《被拒绝的 NTR 老师》第 1 话《我画的女生，从来不看我》排版构建。
 
 用法：python3 scripts/build_lv1.py
 输出：deliverables/lv1/*.png + deliverables/LV1_第1话_试读.pdf
@@ -21,16 +21,18 @@ OUT.mkdir(parents=True, exist_ok=True)
 
 
 def cover(layer):
-    L.caption(layer, (64, 78), ["被拒绝的", "NTR 老师"], size=92, pad=(40, 30), radius=6)
-    L.caption(layer, (64, 404), ["第 1 话｜她拒绝的理由，", "比你画的还精彩"], size=36,
+    L.caption(layer, (64, 44), ["第 1 话"], size=28, pad=(22, 12), radius=4, bold=False)
+    L.caption(layer, (60, 104), ["被拒绝的", "NTR 老师"], size=80, pad=(36, 26), radius=6)
+    L.caption(layer, (64, 400), ["我画的女生，从来不看我"], size=38,
               pad=(28, 18), radius=4, bold=False)
-    L.speech(layer, (1150, 300), ["你就是那个……", "专门画女孩子", "被抢走的老师吧？"],
-             size=40, target=None)
+    L.speech(layer, (1168, 268), ["这条线……", "我认得哦。"], size=42, target=None)
 
 
 def p01(layer):
-    L.caption(layer, (44, 52), ["我二十五岁，画 NTR 漫画。"], size=44, pad=(30, 22))
-    L.caption(layer, (44, 190), ["读者越生气，我涨粉越快。"], size=44, pad=(30, 22))
+    L.caption(layer, (44, 52), ["我二十五岁，笔名「夜画」。"], size=44, pad=(30, 22))
+    L.caption(layer, (44, 190), ["画 NTR，四年没露过脸。"], size=44, pad=(30, 22))
+    L.caption(layer, (44, 328), ["读者认不出我，", "他们只认得这条线。"], size=40,
+              pad=(28, 20))
     L.caption(layer, (930, 1640), ["今天要画完的，", "是女主被抢走那一页。"], size=38,
               pad=(28, 20), bold=False)
 
@@ -49,15 +51,14 @@ def p03(layer):
 
 
 def p04(layer):
-    L.speech(layer, (368, 372), ["啊……你是那个", "画漫画的老师？"], size=44,
-             target=(690, 520))
-    L.speech(layer, (330, 872), ["我有关注你哦。"], size=44, target=(742, 704))
-    L.caption(layer, (60, 1740), ["手心出汗了。"], size=34, pad=(26, 18), bold=False)
+    L.caption(layer, (58, 62), ["我忘了，", "把打印稿收起来。"], size=34, pad=(28, 20), bold=False)
+    L.speech(layer, (306, 640), ["这个分镜……", "是你画的吧？"], size=42,
+             target=(676, 872), tail_len=58)
 
 
 def p05(layer):
-    L.caption(layer, (56, 66), ["她说这句话的时候，"], size=40, pad=(28, 20))
-    L.caption(layer, (56, 190), ["笑得很温柔。"], size=40, pad=(28, 20))
+    L.caption(layer, (56, 62), ["她说，她关注我很久了。", "每一话都看。"], size=36,
+              pad=(28, 20))
     L.speech(layer, (330, 690), ["那我说实话", "可以吗？"], size=46, target=(640, 900))
     L.caption(layer, (900, 1690), ["我点头点得太快了。"], size=32, pad=(24, 16), bold=False)
 
