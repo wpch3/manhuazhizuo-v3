@@ -25,6 +25,9 @@ def cover(layer):
     L.caption(layer, (56, 96), ["被拒绝的", "NTR 老师"], size=76, pad=(36, 26), radius=6)
     L.caption(layer, (60, 392), ["我画的女生，从来不看我"], size=36,
               pad=(28, 18), radius=4, bold=False)
+    # 她看的是面前摊开的漫画（=他的画），在画框内 → 有尾，指向她
+    L.speech(layer, (1215, 320), ["你画的这个，", "我认得。"], size=40,
+             target=(930, 720), tail_len=110)
 
 
 def p01(layer):
@@ -67,11 +70,11 @@ def p05(layer):
 
 
 def p06(layer):
-    # 新构图：速写本平放桌面，她抬眼。两句连续话：第一泡有尾，第二泡无尾紧随
-    L.speech(layer, (1052, 408), ["老师，你画的那些", "「被抢走」的女孩子……"], size=36,
-             target=(686, 566), tail_len=104)
-    L.speech(layer, (1052, 612), ["好像都没有", "自己喜欢的东西。"], size=36, target=None)
-    L.caption(layer, (60, 1706), ["那一瞬间，我竟然有点想反驳。"], size=32, pad=(24, 16),
+    # rev.12 新原画：她左斜靠、书占下半页；右上留白墙。三句连续视线：泡1有尾→泡2无尾→旁白紧随其后（同列）
+    L.speech(layer, (1060, 215), ["老师，你画的那些", "「被抢走」的女孩子……"], size=33,
+             target=(485, 500), tail_len=150)
+    L.speech(layer, (1060, 400), ["好像都没有", "自己喜欢的东西。"], size=33, target=None)
+    L.caption(layer, (860, 700), ["那一瞬间，", "我竟然有点想反驳。"], size=32, pad=(26, 18),
               bold=False)
 
 
@@ -118,8 +121,7 @@ PAGES = [
     ("page-03-cafe", "p03", p03, 3, None),
     ("page-04-lookup", "p04", p04, 4, None),
     ("page-05-standing", "p05", p05, 5, None),
-    ("page-06-notebook", "p06", p06, 6,
-     [(150, 120, 260, 250), (1256, 130, 270, 270)], None),
+    ("page-06-notebook", "p06", p06, 6, None),
     ("page-07-touch", "p07", p07, 7, None),
     ("page-08-girl-noon", "p08", p08, 8, None),
     ("page-09-newpage", "p09", p09, 9, None),
