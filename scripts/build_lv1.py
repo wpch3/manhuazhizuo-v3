@@ -21,11 +21,10 @@ OUT.mkdir(parents=True, exist_ok=True)
 
 
 def cover(layer):
-    L.caption(layer, (64, 44), ["第 1 话"], size=28, pad=(22, 12), radius=4, bold=False)
-    L.caption(layer, (60, 104), ["被拒绝的", "NTR 老师"], size=80, pad=(36, 26), radius=6)
-    L.caption(layer, (64, 400), ["我画的女生，从来不看我"], size=38,
+    L.caption(layer, (60, 40), ["第 1 话"], size=28, pad=(22, 12), radius=4, bold=False)
+    L.caption(layer, (56, 96), ["被拒绝的", "NTR 老师"], size=76, pad=(36, 26), radius=6)
+    L.caption(layer, (60, 392), ["我画的女生，从来不看我"], size=36,
               pad=(28, 18), radius=4, bold=False)
-    L.speech(layer, (1168, 268), ["这条线……", "我认得哦。"], size=42, target=None)
 
 
 def p01(layer):
@@ -45,30 +44,34 @@ def p02(layer):
 
 
 def p03(layer):
-    L.caption(layer, (46, 60), ["然后，我在咖啡店看见了她。"], size=44, pad=(30, 22))
-    L.caption(layer, (46, 1742), ["我站了一会儿，才敢走过去。"], size=34, pad=(26, 18),
+    # 新构图：过肩远景，她在中景窗边看书，脸很小
+    L.caption(layer, (628, 74), ["然后，我在咖啡店看见了她。"], size=40, pad=(30, 22))
+    L.caption(layer, (70, 1700), ["我站了一会儿，才敢走过去。"], size=34, pad=(26, 18),
               bold=False)
 
 
 def p04(layer):
-    L.caption(layer, (58, 62), ["我忘了，", "把打印稿收起来。"], size=34, pad=(28, 20), bold=False)
-    L.speech(layer, (306, 640), ["这个分镜……", "是你画的吧？"], size=42,
-             target=(676, 872), tail_len=58)
+    # 新构图：她刚从稿子上抬头，眼睛还在纸上
+    L.caption(layer, (74, 72), ["我忘了，", "把打印稿收起来。"], size=34, pad=(28, 20), bold=False)
+    L.speech(layer, (316, 700), ["这个分镜……", "是你画的吧？"], size=42,
+             target=(612, 900), tail_len=58)
 
 
 def p05(layer):
-    L.caption(layer, (56, 62), ["她说，她关注我很久了。", "每一话都看。"], size=36,
-              pad=(28, 20))
-    L.speech(layer, (330, 690), ["那我说实话", "可以吗？"], size=46, target=(640, 900))
-    L.caption(layer, (900, 1690), ["我点头点得太快了。"], size=32, pad=(24, 16), bold=False)
+    # 新构图：她坐直、平视，单侧嘴角，不笑
+    L.caption(layer, (72, 74), ["她说，她关注我很久了。", "每一话都看。"], size=36,
+              pad=(30, 22))
+    L.speech(layer, (318, 856), ["那我说实话", "可以吗？"], size=44,
+             target=(700, 762), tail_len=92)
+    L.caption(layer, (930, 1712), ["我点头点得太快了。"], size=32, pad=(24, 16), bold=False)
 
 
 def p06(layer):
-    L.speech(layer, (356, 286), ["老师，你画的那些", "「被抢走」的女孩子……"], size=40,
-             target=(720, 660), tail_len=62)
-    L.speech(layer, (1146, 262), ["好像都没有", "自己喜欢的东西。"], size=40,
-             target=(878, 600), tail_len=62)
-    L.caption(layer, (70, 1630), ["那一瞬间，我竟然有点想反驳。"], size=34, pad=(26, 18),
+    # 新构图：速写本平放桌面，她抬眼。两句连续话：第一泡有尾，第二泡无尾紧随
+    L.speech(layer, (1052, 408), ["老师，你画的那些", "「被抢走」的女孩子……"], size=36,
+             target=(686, 566), tail_len=104)
+    L.speech(layer, (1052, 612), ["好像都没有", "自己喜欢的东西。"], size=36, target=None)
+    L.caption(layer, (60, 1706), ["那一瞬间，我竟然有点想反驳。"], size=32, pad=(24, 16),
               bold=False)
 
 
@@ -83,10 +86,12 @@ def p07(layer):
 
 
 def p08(layer):
-    L.caption(layer, (48, 26), ["那天下午，我在窗边坐到天黑。"], size=40, pad=(28, 20))
-    L.speech(layer, (1052, 352), ["明天也一起吧？"], size=34, target=(908, 470), tail_len=46)
-    L.caption(layer, (760, 1560), ["她不是谁的「女朋友」。", "她只是她自己。"], size=44,
-              pad=(32, 24))
+    # 新构图：窗外，她和围巾男生并肩，笑到眯眼
+    L.caption(layer, (62, 68), ["那天下午，我在窗边坐到天黑。"], size=36, pad=(28, 20))
+    # 她隔着玻璃说话，属于"画外音"，不画尾巴（v1 铁律：说话者不在同一空间不画尾）
+    L.speech(layer, (1258, 264), ["明天也", "一起吧？"], size=34, target=None)
+    L.caption(layer, (742, 1666), ["她不是谁的「女朋友」。", "她只是她自己。"], size=40,
+              pad=(32, 22))
 
 
 def p09(layer):
@@ -98,11 +103,11 @@ def p09(layer):
 
 
 def p10(layer):
-    """第 10 页：四十年后。旁白在盒子上方的空墙，孙辈的话放进右下空白格。"""
-    L.caption(layer, (556, 86), ["四十年后。"], size=50, pad=(32, 24))
-    L.caption(layer, (556, 202), ["他还在画。"], size=36, pad=(26, 18))
-    L.caption(layer, (556, 278), ["不过现在，他画的是纯爱。"], size=36, pad=(26, 18))
-    L.speech(layer, (1006, 1698), ["爷爷，", "这一段真好看。"], size=36, target=None)
+    # 新构图：老人伏案读稿，右上空墙；孙辈画外音落在右墙，无尾
+    L.caption(layer, (772, 60), ["四十年后。"], size=46, pad=(32, 24))
+    L.caption(layer, (772, 190), ["他还在画。", "不过现在，他画的是纯爱。"], size=34,
+              pad=(28, 20), bold=False)
+    L.speech(layer, (1032, 566), ["爷爷，", "这一段真好看。"], size=36, target=None)
 
 
 PAGES = [
