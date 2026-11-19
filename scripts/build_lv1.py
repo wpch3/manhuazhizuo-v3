@@ -76,17 +76,17 @@ def p06(layer):
 
 
 def p07(layer):
-    L.speech(layer, (372, 300), ["你笔下的女生，好像只有", "「被爱」和「被抢走」", "两种状态。"],
-             size=40, target=(748, 470), tail_len=54)
-    L.speech(layer, (360, 700), ["可是我们其实会——"], size=42, target=(660, 520), tail_len=50)
-    L.speech(layer, (356, 930), ["挑自己喜欢的伞。", "记得朋友不吃香菜。",
-                                 "下雨天，也会突然想吃甜的。"], size=34,
-             target=(700, 812), tail_len=46)
-    L.caption(layer, (96, 1704), ["她说得很轻，像在替谁道歉。"], size=32, pad=(26, 18), bold=False)
+    # rev.6 新原画：全页近景、她前倾，嘴闭不笑。左上角teal墙 + 左臂上叠放气泡，尾尖指向脸
+    L.speech(layer, (255, 300), ["你笔下的女生，好像", "只有「被爱」和", "「被抢走」两种状态。"],
+             size=33, target=(610, 780), tail_len=96)
+    L.speech(layer, (255, 545), ["可是我们其实会——"], size=34, target=None)
+    L.speech(layer, (255, 760), ["挑自己喜欢的伞。", "记得朋友不吃香菜。", "下雨天，也会突然想吃甜的。"],
+             size=26, target=None)
+    L.caption(layer, (770, 64), ["她说得很轻，像在替谁道歉。"], size=30, pad=(24, 16), bold=False)
 
 
 def p08(layer):
-    # 新构图：窗外，她和围巾男生并肩，笑到眯眼
+    # rev.6 新构图：窗外她与围巾男生并肩，收敛的笑（眼弯、头微侧），全话唯一松弛的笑
     L.caption(layer, (62, 68), ["那天下午，我在窗边坐到天黑。"], size=36, pad=(28, 20))
     # 她隔着玻璃说话，属于"画外音"，不画尾巴（v1 铁律：说话者不在同一空间不画尾）
     L.speech(layer, (1258, 264), ["明天也", "一起吧？"], size=34, target=None)
@@ -103,11 +103,11 @@ def p09(layer):
 
 
 def p10(layer):
-    # 新构图：老人伏案读稿，右上空墙；孙辈画外音落在右墙，无尾
-    L.caption(layer, (772, 60), ["四十年后。"], size=46, pad=(32, 24))
-    L.caption(layer, (772, 190), ["他还在画。", "不过现在，他画的是纯爱。"], size=34,
+    # rev.6 新原画：右上空墙叠三块（四十年后/他还在画/爷爷画外音），无尾
+    L.caption(layer, (852, 74), ["四十年后。"], size=46, pad=(32, 24))
+    L.caption(layer, (852, 204), ["他还在画。", "不过现在，他画的是纯爱。"], size=34,
               pad=(28, 20), bold=False)
-    L.speech(layer, (1032, 566), ["爷爷，", "这一段真好看。"], size=36, target=None)
+    L.speech(layer, (1130, 640), ["爷爷，", "这一段真好看。"], size=34, target=None)
 
 
 PAGES = [
