@@ -82,14 +82,15 @@ def p07(layer):
     L.speech(layer, (255, 545), ["可是我们其实会——"], size=34, target=None)
     L.speech(layer, (255, 760), ["挑自己喜欢的伞。", "记得朋友不吃香菜。", "下雨天，也会突然想吃甜的。"],
              size=26, target=None)
-    L.caption(layer, (770, 64), ["她说得很轻，像在替谁道歉。"], size=30, pad=(24, 16), bold=False)
+    # rev.8 定稿：反射旁白按LTR阅读顺序移到右缘 y≈1010（三泡之后），不再抢在前面
+    L.caption(layer, (1120, 1010), ["她说得很轻，", "像在替谁道歉。"], size=30, pad=(24, 16), bold=False)
 
 
 def p08(layer):
     # rev.6 新构图：窗外她与围巾男生并肩，收敛的笑（眼弯、头微侧），全话唯一松弛的笑
     L.caption(layer, (62, 68), ["那天下午，我在窗边坐到天黑。"], size=36, pad=(28, 20))
     # 她隔着玻璃说话，属于"画外音"，不画尾巴（v1 铁律：说话者不在同一空间不画尾）
-    L.speech(layer, (1258, 264), ["明天也", "一起吧？"], size=34, target=None)
+    L.speech(layer, (1258, 264), ["走吧，", "要晚了。"], size=34, target=None)
     L.caption(layer, (742, 1666), ["她不是谁的「女朋友」。", "她只是她自己。"], size=40,
               pad=(32, 22))
 
@@ -105,9 +106,9 @@ def p09(layer):
 def p10(layer):
     # rev.6 新原画：右上空墙叠三块（四十年后/他还在画/爷爷画外音），无尾
     L.caption(layer, (852, 74), ["四十年后。"], size=46, pad=(32, 24))
-    L.caption(layer, (852, 204), ["他还在画。", "不过现在，他画的是纯爱。"], size=34,
+    L.caption(layer, (852, 204), ["我还在画。", "不过现在，我画的是纯爱。"], size=34,
               pad=(28, 20), bold=False)
-    L.speech(layer, (1130, 640), ["爷爷，", "这一段真好看。"], size=34, target=None)
+    L.speech(layer, (1175, 560), ["爷爷，", "这一段真好看。"], size=34, target=None)
 
 
 PAGES = [
